@@ -249,7 +249,7 @@ $(document).ready(function () {
     var url = item.val();
 
     if ((!url.startsWith("{") && !url.endsWith("}")) && url.substr(0, 4) !== 'http' && url.length !== 0) {
-      addWarning(item, 'url', 'not a valid url');
+      addWarning(item, 'url', 'URL inválida');
     } else {
       addSuccess(item, 'url');
       // update
@@ -261,8 +261,8 @@ $(document).ready(function () {
     var item = $('#icon');
     var icon = item.val();
 
-    if ((!icon.startsWith("{") && !icon.endsWith("}")) && icon.substr(0, 4) !== 'http' && icon.length !== 0) {
-      addWarning(item, 'icon', 'not a valid url');
+    if (url.substr(0, 4) !== 'http' && (!icon.startsWith("{") && !icon.endsWith("}")) && icon.length !== 0) {
+      addWarning(item, 'icon', 'URL inválida.');
     } else {
       addSuccess(item, 'icon');
       // update
