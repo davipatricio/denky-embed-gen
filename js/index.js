@@ -296,7 +296,7 @@ $(document).ready(function () {
     var author_url = item.val();
 
     if ((!author_url.startsWith("{") && !author_url.endsWith("}")) && author_url.substr(0, 4) !== 'http' && author_url.length !== 0) {
-      addWarning(item, 'author_url', 'not a valid url');
+      addWarning(item, 'author_url', 'URL inválida');
     } else {
       addSuccess(item, 'author_url');
       // update
@@ -308,8 +308,8 @@ $(document).ready(function () {
     var item = $('#author_icon');
     var author_icon = item.val();
 
-    if ((!author_icon.startsWith("{") && !author_icon.endsWith("}")) && author_icon.substr(0, 4) !== 'http' && author_icon.length !== 0) {
-      addWarning(item, 'author_icon', 'not a valid url');
+    if ( (author_icon.startsWith('{')  && author_icon.endsWith('}')) || (author_icon.length !== 0 && !author_icon.startsWith('http'))) {
+      addWarning(item, 'author_icon', 'URL inválida.');
     } else {
       addSuccess(item, 'author_icon');
       // update
