@@ -308,7 +308,7 @@ $(document).ready(function () {
     var item = $('#author_icon');
     var author_icon = item.val();
 
-    if ( (author_icon.startsWith('{')  && author_icon.endsWith('}')) || (author_icon.length !== 0 && !author_icon.startsWith('http'))) {
+    if ( (!author_icon.startsWith('{')  && !author_icon.endsWith('}')) || (author_icon.length !== 0 && !author_icon.startsWith('http'))) {
       addWarning(item, 'author_icon', 'URL inválida.');
     } else {
       addSuccess(item, 'author_icon');
