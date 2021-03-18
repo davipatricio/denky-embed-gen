@@ -308,7 +308,7 @@ $(document).ready(function () {
     var item = $('#author_icon');
     var author_icon = item.val();
 
-    if (author_icon.length !== 0 && !author_icon.includes('{') || !author_icon.includes('}') || !author_icon.includes('http')) {
+    if (author_icon.length !== 0) {
       if(author_icon.includes('{') && !author_icon.includes('}')) return addWarning(item, 'author_icon', 'URL inválida.');
       if(!author_icon.includes('{') && author_icon.includes('}')) return addWarning(item, 'author_icon', 'URL inválida.');
       if(!author_icon.includes('{') && !author_icon.includes('}')) return addWarning(item, 'author_icon', 'URL inválida.');
