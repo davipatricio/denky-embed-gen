@@ -309,9 +309,9 @@ $(document).ready(function () {
     var author_icon = item.val();
 
     if (author_icon.length !== 0) {
-      if(author_icon.includes('{') && !author_icon.includes('}')) return addWarning(item, 'author_icon', 'URL inválida.');
-      if(!author_icon.includes('{') && author_icon.includes('}')) return addWarning(item, 'author_icon', 'URL inválida.');
-      if(!author_icon.includes('{') && !author_icon.includes('}')) return addWarning(item, 'author_icon', 'URL inválida.');
+      if(author_icon.includes('{') && !author_icon.includes('}')) addWarning(item, 'author_icon', 'URL inválida.');
+      if(!author_icon.includes('{') && author_icon.includes('}')) addWarning(item, 'author_icon', 'URL inválida.');
+      if(!author_icon.includes('{') && !author_icon.includes('}')) addWarning(item, 'author_icon', 'URL inválida.');
     } else {
       addSuccess(item, 'author_icon');
       // update
