@@ -98,6 +98,7 @@ url: ""
 	embed.thumbnail = embed.thumb_url
 	delete embed.thumb_url
     source = JSON.stringify(embed)
+delete embed.thumbnail
 	embed.thumb_url = embed.thumbnail
     // code
     $('.source').text(source);
@@ -312,22 +313,19 @@ url: ""
     var author_url = item.val();
 
 
-    if (author_url.length) {
       addSuccess(item, 'author_url');
       // update
       updateAuthorUrl(author_url);
-    }
+   
   });
 
   $('#author_icon').keyup(function () {
     var item = $('#author_icon');
     var author_icon = item.val();
 
-    if (author_icon.length) {
       addSuccess(item, 'author_icon');
       // update
       updateAuthorIcon(author_icon);
-    }
   });
 
   $('#footer').keyup(function () {
