@@ -26,7 +26,10 @@ $(document).ready(function () {
     thumb_url: '',
     color: '',
     fields: [],
-    footer: ''
+    footer: '',
+    image: {
+url: ""
+}
   };
 
   function resetEmbed() {
@@ -183,6 +186,11 @@ $(document).ready(function () {
     updateEmbed(embed);
   }
 
+  function updateImage(value) {
+    embed.image.url = value || '';
+    updateEmbed(embed);
+  }
+
   function updateDescription(value) {
     embed.description = value || '';
     updateEmbed(embed);
@@ -268,6 +276,14 @@ $(document).ready(function () {
       // update
       updateThumb(icon);
     }
+  });
+
+  $('#imagem').keyup(function () {
+    var item = $('#imagem');
+    var description = item.val();
+    addSuccess(item, 'imagem');
+    // update
+    updateImage(description);
   });
 
   $('#description').keyup(function () {
