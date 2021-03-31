@@ -95,11 +95,16 @@ url: ""
     }
 
     // add send function
-	embed.thumbnail = embed.thumb_url
-	delete embed.thumb_url
-    source = JSON.stringify(embed)
+embed.thumbnail = embed.thumb_url
+delete embed.thumb_url
+embed.author.icon_url = embed.author.icon
+delete embed.author.icon
+source = JSON.stringify(embed)
+
+embed.thumb_url = embed.thumbnail
+embed.author.icon = embed.author.icon_url
 delete embed.thumbnail
-	embed.thumb_url = embed.thumbnail
+delete embed.author.icon_url
     // code
     $('.source').text(source);
     hljs.highlightBlock($('.source')[0]);
